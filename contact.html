@@ -6,8 +6,8 @@
     <title>Contact Us - Navjeevan AI</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 
     <style>
         .contact-hero {
@@ -25,61 +25,86 @@
             margin: 0 auto;
         }
 
-        .contact-form {
+        .hospital-contacts {
             background: var(--background);
             padding: 2rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .form-group {
+        .hospital-card {
             margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
+            padding: 1rem;
             border: 2px solid var(--background-alt);
             border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
             transition: var(--transition);
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
+        .hospital-card:hover {
             border-color: var(--primary);
+            transform: translateY(-5px);
         }
 
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
+        .hospital-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .submit-btn {
+        .hospital-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hospital-contact-item i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .call-btn {
+            display: inline-block;
             background: var(--primary);
             color: white;
             border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: var(--transition);
+            margin-top: 0.5rem;
         }
 
-        .submit-btn:hover {
+        .call-btn:hover {
             background: var(--primary-dark);
-            transform: translateY(-2px);
+        }
+
+        .emergency-numbers {
+            margin-top: 2rem;
+        }
+
+        .emergency-numbers h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            padding: 0.8rem;
+            background-color: #ffeeee;
+            border-radius: 8px;
+        }
+
+        .emergency-item i {
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+
+        .emergency-item span {
+            font-weight: 500;
         }
 
         .map-container {
@@ -120,6 +145,13 @@
                 height: 300px;
             }
         }
+        *{
+            text-decoration: none;
+        }
+        a{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(255, 0, 0);
+        }
     </style>
 </head>
 <body>
@@ -146,30 +178,76 @@
 
     <header class="contact-hero">
         <h1>Contact Us</h1>
-        <p>Get in touch with our team</p>
+        <p>Get immediate help or connect with popular hospitals</p>
     </header>
 
     <section class="contact-section">
-        <div class="contact-form">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+        <div class="hospital-contacts">
+            <h2>Popular Hospital Chains</h2>
+            <p>Quick access to major hospital networks in India</p>
+            
+            <div class="hospital-card">
+                <h3>Apollo Hospitals</h3>
+                <div class="hospital-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Emergency: 1860 500 1066</span>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="hospital-contact-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Website: www.apollohospitals.com</span>
                 </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
+                <a href="tel:18605001066" class="call-btn">Call Emergency</a>
+            </div>
+            
+            <div class="hospital-card">
+                <h3>Fortis Healthcare</h3>
+                <div class="hospital-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Emergency: +91-124-4921021</span>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                <div class="hospital-contact-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Website: www.fortishealthcare.com</span>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+                <a href="tel:+911244921021" class="call-btn">Call Emergency</a>
+            </div>
+            
+            <div class="hospital-card">
+                <h3>Max Healthcare</h3>
+                <div class="hospital-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Emergency: +91-11-40554055</span>
+                </div>
+                <div class="hospital-contact-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Website: www.maxhealthcare.in</span>
+                </div>
+                <a href="tel:+911140554055" class="call-btn">Call Emergency</a>
+            </div>
+
+            <div class="emergency-numbers">
+                <h3><i class="fas fa-bell"></i> Emergency Hotlines</h3>
+                <div class="emergency-item">
+                    <i class="fas fa-ambulance"></i>
+                    <span>Medical Emergency: </span>
+                    <a href="tel:102">102</a>
+                </div>
+                <div class="emergency-item">
+                    <i class="fas fa-fire"></i>
+                    <span>Fire Brigade: </span>
+                    <a href="tel:101">101</a>
+                </div>
+                <div class="emergency-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Police: </span>
+                    <a href="tel:100">100</a>
+                </div>
+                <div class="emergency-item">
+                    <i class="fa-solid fa-person-dress"></i>
+                    <span>Women's Helpline: </span>
+                    <a href="tel:1091">1091</a>
+                </div>
+            </div>
 
             <div class="contact-info">
                 <h3>Other Ways to Connect</h3>
@@ -224,14 +302,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
