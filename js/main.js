@@ -25,6 +25,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Scroll to hospital finder section when bubble navigator is clicked
+function scrollToHospitalFinder() {
+    document.querySelector('#hospital-finder').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
