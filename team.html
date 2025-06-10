@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - Navjeevan AI</title>
+    <link rel="stylesheet" href="css/team.css">
+        <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <svg class="logo" width="40" height="40" viewBox="0 0 40 40">
+                <path d="M20 0C8.954 0 0 8.954 0 20s8.954 20 20 20 20-8.954 20-20S31.046 0 20 0zm0 36c-8.837 0-16-7.163-16-16S11.163 4 20 4s16 7.163 16 16-7.163 16-16 16z" fill="#4A90E2"/>
+                <path d="M20 8c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S26.627 8 20 8zm0 22c-5.514 0-10-4.486-10-10S14.486 10 20 10s10 4.486 10 10-4.486 10-10 10z" fill="#2D74DA"/>
+            </svg>
+            <span>Navjeevan AI</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="team.html" class="active">Team</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section class="team">
+        <div class="team-header" data-animate="fade">
+            <h2>Meet Our Visionaries</h2>
+            <p>The brilliant minds shaping the future of maternal healthcare</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card" data-animate="up" data-animate-delay="1">
+                <div class="team-image-container">
+                    <img src="https://avatars.githubusercontent.com/u/165061481?v=4" alt="Saptarshi Bose">
+                    <div class="team-overlay">
+                        <div class="team-social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3>Saptarshi Bose</h3>
+                <div class="team-role">Lead Developer</div>
+                <div class="team-bio">Saptarshi drives the technical vision of Navjeevan AI, blending expertise in AI with a passion for transforming maternal healthcare.</div>
+            </div>
+
+            <div class="team-card" data-animate="up" data-animate-delay="2">
+                <div class="team-image-container">
+                    <img src="https://raw.githubusercontent.com/Arka-Sengupta/Portfolio2/refs/heads/main/public/profile.png" alt="Arka Sengupta">
+                    <div class="team-overlay">
+                        <div class="team-social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3>Arka Sengupta</h3>
+                <div class="team-role">Frontend Developer</div>
+                <div class="team-bio">Arka crafts seamless and intuitive interfaces, ensuring accessibility and beauty for both mothers and healthcare professionals.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="team.html">Team</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Navjeevan AI. Built with care by Arka & Saptarshi.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('[data-animate]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animation = entry.target.dataset.animate;
+                    const delay = entry.target.dataset.animateDelay || '';
+                    entry.target.classList.add(`animate-${animation}`);
+                    if (delay) {
+                        entry.target.classList.add(`animate-delay-${delay}`);
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animateElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

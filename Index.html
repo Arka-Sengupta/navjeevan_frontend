@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navjeevan AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <svg class="logo" width="40" height="40" viewBox="0 0 40 40">
+                <path d="M20 0C8.954 0 0 8.954 0 20s8.954 20 20 20 20-8.954 20-20S31.046 0 20 0zm0 36c-8.837 0-16-7.163-16-16S11.163 4 20 4s16 7.163 16 16-7.163 16-16 16z" fill="#4A90E2"/>
+                <path d="M20 8c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S26.627 8 20 8zm0 22c-5.514 0-10-4.486-10-10S14.486 10 20 10s10 4.486 10 10-4.486 10-10 10z" fill="#2D74DA"/>
+            </svg>
+            <span>Navjeevan AI</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="features.html">Features</a>
+            <a href="team.html">Team</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content" data-animate="fade">
+            <h1>Welcome to Navjeevan AI</h1>
+            <p>Empowering Maternal Health with Intelligence</p>
+            <a href="#features" class="cta-button">Explore Navjeevan</a>
+        </div>
+        <div class="hero-image" data-animate="up" data-delay="1">
+            <img src="assets/home.png" alt="Navjeevan AI">
+        </div>
+    </section>
+
+    <section class="about">
+        <h2 data-animate="fade">What is Navjeevan AI?</h2>
+        <div class="about-content">
+            <div class="about-text" data-animate="up" data-delay="1">
+                <p>Navjeevan AI is a health-centric artificial intelligence platform designed to support expectant mothers and healthcare providers. It leverages advanced machine learning to assess pregnancy risk, predict fetal health conditions, and offer intelligent assistance in real-time.</p>
+            </div>
+            <div class="about-image" data-animate="up" data-delay="2">
+                <img src="https://via.placeholder.com/600x400" alt="About Navjeevan AI">
+            </div>
+        </div>
+    </section>
+
+    <section class="features-preview">
+        <h2 data-animate="fade">Our AI Capabilities</h2>
+        <div class="features-grid">
+            <div class="feature-card" data-animate="up" data-delay="1">
+                <img src="https://via.placeholder.com/300x200" alt="Pregnancy Risk Prediction">
+                <h3>Pregnancy Risk Prediction</h3>
+                <p>Get AI-driven insights into potential pregnancy complications based on clinical data and symptoms.</p>
+            </div>
+            <div class="feature-card" data-animate="up" data-delay="2">
+                <img src="https://via.placeholder.com/300x200" alt="Fetal Health Prediction">
+                <h3>Fetal Health Prediction</h3>
+                <p>Analyze fetal heart rate and other indicators to predict potential health concerns early.</p>
+            </div>
+            <div class="feature-card" data-animate="up" data-delay="3">
+                <img src="https://via.placeholder.com/300x200" alt="AI Assistant">
+                <h3>AI Assistant</h3>
+                <p>A chatbot-style assistant to answer questions, provide suggestions, and guide through pregnancy stages.</p>
+            </div>
+        </div>
+        <a href="features.html" class="view-all-button" data-animate="fade">View All Features</a>
+    </section>
+
+    <section class="hospital-finder">
+        <div class="hospital-finder-header" data-animate="fade">
+            <h2>Find Your Nearest Hospital</h2>
+            <p>Enter your location to find hospitals near you</p>
+        </div>
+        <div class="hospital-finder-content" data-animate="up" data-delay="1">
+            <div class="hospital-search">
+                <input type="text" id="location-input" placeholder="Enter your location (e.g., Kolkata, India)" required>
+                <button id="search-hospitals" class="cta-button">Search Hospitals</button>
+            </div>
+            <div id="map" style="height: 400px; width: 100%; margin-top: 2rem;"></div>
+            <div id="hospital-results" class="hospital-results"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="team.html">Team</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Navjeevan AI. Built with care by Arka & Saptarshi.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Initialize Leaflet map
+        const map = L.map('map').setView([22.5726, 88.3639], 12); // Default: Kolkata, India
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Geoapify API key
+        const apiKey = 'fb02c3e00caa4328a2f5b8dbd7abb215';
+        const requestOptions = {
+            method: 'GET',
+        };
+
+        // Create loading indicator
+        function showLoading(show) {
+            const button = document.getElementById('search-hospitals');
+            const input = document.getElementById('location-input');
+            if (show) {
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+                button.disabled = true;
+                input.disabled = true;
+            } else {
+                button.innerHTML = 'Search Hospitals';
+                button.disabled = false;
+                input.disabled = false;
+            }
+        }
+
+        // Clear existing markers
+        function clearMarkers() {
+            map.eachLayer(layer => {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+        }
+
+        // Add hospital markers and cards
+        function addHospitalMarkers(hospitals) {
+            const resultsContainer = document.getElementById('hospital-results');
+            resultsContainer.innerHTML = '';
+            const bounds = L.latLngBounds();
+
+            hospitals.forEach((place, index) => {
+                const lon = place.geometry.coordinates[0];
+                const lat = place.geometry.coordinates[1];
+                const name = place.properties.name || 'Hospital';
+                const address = place.properties.formatted || 'Address not available';
+                const phone = place.properties.phone || 'Phone not available';
+                const website = place.properties.website || '';
+
+                // Add marker to map
+                const marker = L.marker([lat, lon])
+                    .addTo(map)
+                    .bindPopup(`
+                        <div class="hospital-popup">
+                            <h4>${name}</h4>
+                            <p>${address}</p>
+                            <p>${phone}</p>
+                            ${website ? `<a href="${website}" target="_blank">Visit Website</a>` : ''}
+                        </div>
+                    `);
+
+                bounds.extend([lat, lon]);
+
+                // Create result card with more details
+                const resultCard = document.createElement('div');
+                resultCard.className = 'hospital-card';
+                resultCard.setAttribute('data-animate', 'up');
+                resultCard.setAttribute('data-delay', (index + 1) * 0.2);
+                resultCard.innerHTML = `
+                    <h3>${name}</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
+                    <p><i class="fas fa-phone"></i> ${phone}</p>
+                    ${website ? `<a href="${website}" target="_blank" class="hospital-link"><i class="fas fa-globe"></i> Website</a>` : ''}
+                    <button class="direction-btn" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}')"><i class="fas fa-directions"></i> Get Directions</button>
+                `;
+
+                resultsContainer.appendChild(resultCard);
+                observer.observe(resultCard);
+
+                // Add hover interaction between card and marker
+                resultCard.addEventListener('mouseenter', () => marker.openPopup());
+                resultCard.addEventListener('mouseleave', () => marker.closePopup());
+            });
+
+            // Fit map to show all markers
+            if (!bounds.isEmpty()) {
+                map.fitBounds(bounds, { padding: [50, 50] });
+            }
+        }
+
+        // Handle location search
+        async function searchHospitals(location) {
+            try {
+                showLoading(true);
+                clearMarkers();
+
+                // Geocode the location
+                const geocodeResponse = await fetch(
+                    `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(location)}&apiKey=${apiKey}`,
+                    requestOptions
+                );
+                const geocodeData = await geocodeResponse.json();
+
+                if (!geocodeData.features.length) {
+                    throw new Error('Location not found');
+                }
+
+                const coords = geocodeData.features[0].geometry.coordinates;
+
+                // Search for hospitals
+                const hospitalsResponse = await fetch(
+                    `https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=circle:${coords[0]},${coords[1]},5000&limit=10&apiKey=${apiKey}`,
+                    requestOptions
+                );
+                const hospitalsData = await hospitalsResponse.json();
+
+                if (!hospitalsData.features.length) {
+                    throw new Error('No hospitals found');
+                }
+
+                addHospitalMarkers(hospitalsData.features);
+            } catch (error) {
+                const resultsContainer = document.getElementById('hospital-results');
+                resultsContainer.innerHTML = `<div class="error-message"><i class="fas fa-exclamation-circle"></i> ${error.message || 'An error occurred. Please try again.'}</div>`;
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Add event listeners
+        document.getElementById('search-hospitals').addEventListener('click', () => {
+            const location = document.getElementById('location-input').value;
+            if (!location) {
+                const resultsContainer = document.getElementById('hospital-results');
+                resultsContainer.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter a location</div>';
+                return;
+            }
+            searchHospitals(location);
+        });
+
+        document.getElementById('location-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('search-hospitals').click();
+            }
+        });
+
+        // Try to get user's location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    map.setView([position.coords.latitude, position.coords.longitude], 12);
+                },
+                () => {/* Use default location */}
+            );
+        }
+    </script>
+    </script>
+</body>
+</html>
